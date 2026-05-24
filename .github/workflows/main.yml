@@ -20,9 +20,10 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      # ক্যাশ ছাড়া একদম ফ্রেশ বিল্ড রান করা
+      # সরাসরি কমান্ড লাইনে রিপোজিটরি ইনজেক্ট করে ফ্রেশ বিল্ড করা
       - name: Build with Maven
-        run: mvn clean package -U --file pom.xml
+        run: |
+          mvn clean package -U --file pom.xml -DremoteRepositories=https://repo.papermc.io/repository/maven-snapshots/,https://repo.papermc.io/repository/maven-public/,https://repo.maven.apache.org/maven2
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
