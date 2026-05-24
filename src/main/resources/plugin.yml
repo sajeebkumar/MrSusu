@@ -1,0 +1,22 @@
+name: MrSusu
+version: 1.0.0
+main: dev.mrsusu.MrSusuPlugin
+api-version: '1.21'
+description: Standalone NPC plugin - Mr Susu fake player via packets
+authors: [ MrSusuDev ]
+website: https://github.com/mrsusu
+
+commands:
+  mrsusu:
+    description: Main command for Mr Susu NPC management
+    usage: /mrsusu <spawn|despawn>
+    permission: mrsusu.admin
+    aliases: [ ms ]
+
+permissions:
+  mrsusu.admin:
+    description: Allows managing the Mr Susu NPC
+    default: op
+  mrsusu.interact:
+    description: Allows interacting with Mr Susu NPC
+    default: true

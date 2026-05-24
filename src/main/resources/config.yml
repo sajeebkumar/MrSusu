@@ -1,0 +1,43 @@
+# ============================================================
+#   MrSusu NPC Plugin - Configuration
+#   Minecraft 1.21.1 - 1.21.4+  |  Paper/Purpur  |  Java 21
+# ============================================================
+
+# The Minecraft username whose skin will be fetched from Mojang API
+skin-name: "Herobrine"
+
+# The command executed (as the clicking player) when they interact with the NPC
+# Example: "mrsusu" will run /mrsusu  |  "menu main" will run /menu main
+click-command: "mrsusu"
+
+# ---- Cooldown ------------------------------------------------
+# Seconds a player must wait between NPC interactions (0 = no cooldown)
+click-cooldown-seconds: 3
+
+# ---- NPC Display Messages ------------------------------------
+# Messages shown to a player when they interact with the NPC.
+# Supports color codes (&a, &c, etc.) and PlaceholderAPI placeholders.
+# Set to [] or leave empty to disable messages entirely.
+npc-messages:
+  - "&eMr Susu &7whispers: &f\"You shouldn't be here...\""
+  - "&7&o[Click to open the menu]"
+
+# Whether to send the npc-messages on every interaction
+show-messages-on-interact: true
+
+# ---- Movement ------------------------------------------------
+movement:
+  # Maximum block radius the NPC will wander from its spawn point
+  radius: 15
+  # How often (in seconds) the NPC picks a new target or idles
+  interval-seconds: 10
+  # Reject destination blocks that are Water or Lava
+  avoid-water: true
+  avoid-lava: true
+
+# ---- Skin Cache ----------------------------------------------
+# How long (in minutes) to cache fetched skin data before re-fetching
+skin-cache-minutes: 60
+
+# ---- Debug ---------------------------------------------------
+debug: false
