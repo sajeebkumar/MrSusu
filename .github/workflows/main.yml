@@ -13,7 +13,20 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
-      - run: mvn clean package -B
+      - name: Download Paper 1.21.1
+        run: |
+          curl -o paper.jar "https://api.papermc.io/v2/projects/paper/versions/1.21.1/builds/132/downloads/paper-1.21.1-132.jar"
+      - name: Install Paper JAR to local Maven repo
+        run: |
+          mvn install:install-file \
+            -Dfile=paper.jar \
+            -DgroupId=io.papermc.paper \
+            -DartifactId=paper \
+            -Dversion=1.21.1-R0.1-SNAPSHOT \
+            -Dclassifier=mojang-mapped \
+            -Dpackaging=jar
+      - name: Build with Maven
+        run: mvn clean package -B
       - uses: actions/upload-artifact@v4
         with:
           name: MrSusu-1.0.0
