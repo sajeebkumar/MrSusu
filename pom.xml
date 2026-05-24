@@ -19,14 +19,18 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>papermc-repo</id>
+            <id>papermc-snapshots</id>
+            <url>https://repo.papermc.io/repository/maven-snapshots/</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>papermc-public</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </pluginRepository>
     </pluginRepositories>
 
     <repositories>
         <repository>
-            <id>papermc</id>
+            <id>papermc-public</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
     </repositories>
