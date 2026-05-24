@@ -11,11 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ১. আপনার রিপোজিটরির কোডগুলো রানারের মধ্যে নিয়ে আসা
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # ২. জাভা ২১ সেটআপ করা (১.২১.১ ভার্সনের জন্য এটি লাগবে)
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
@@ -23,11 +21,16 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      # ৩. কোনো বাড়তি ঝামেলা ছাড়া সরাসরি Maven দিয়ে প্লাগিন বিল্ড করা
+      # ১.২১.১ এর NMS লাইব্রেরিগুলো লোকাল রানারে অটোমেটিক বিল্ড করার অফিশিয়াল মেথড
+      - name: Run BuildTools for Spigot NMS
+        run: |
+          mkdir buildtools && cd buildtools
+          curl -o BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+          java -jar BuildTools.jar --rev 1.21.1 --remapped
+
       - name: Build with Maven
         run: mvn clean package --file pom.xml
 
-      # ৪. বিল্ড হওয়ার পর জার (.jar) ফাইলটি ডাউনলোড করার অপশন তৈরি করা
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
