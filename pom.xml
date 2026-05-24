@@ -19,22 +19,14 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>papermc-snapshots</id>
-            <url>https://repo.papermc.io/repository/maven-snapshots/</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>papermc-public</id>
+            <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </pluginRepository>
     </pluginRepositories>
 
     <repositories>
         <repository>
-            <id>papermc-snapshots</id>
-            <url>https://repo.papermc.io/repository/maven-snapshots/</url>
-        </repository>
-        <repository>
-            <id>papermc-public</id>
+            <id>papermc-repo</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
     </repositories>
@@ -67,7 +59,7 @@
             <plugin>
                 <groupId>io.papermc.paperweight</groupId>
                 <artifactId>paperweight-userdev-mojang-mojmap</artifactId>
-                <version>1.7.1-SNAPSHOT</version>
+                <version>1.7.1</version>
                 <extensions>true</extensions>
                 <executions>
                     <execution>
