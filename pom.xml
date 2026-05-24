@@ -1,95 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-         https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<repositories>
+    <id>dmulloy2-repo</id>
+    <url>https://repo.dmulloy2.net/repository/public/</url>
+</repositories>
 
-    <groupId>dev.mrsusu</groupId>
-    <artifactId>MrSusu</artifactId>
-    <version>1.0.0</version>
-    <packaging>jar</packaging>
-
-    <properties>
-        <java.version>21</java.version>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>papermc-snapshots</id>
-            <url>https://repo.papermc.io/repository/maven-snapshots/</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>papermc-public</id>
-            <url>https://repo.papermc.io/repository/maven-public/</url>
-        </pluginRepository>
-    </pluginRepositories>
-
-    <repositories>
-        <repository>
-            <id>papermc-snapshots</id>
-            <url>https://repo.papermc.io/repository/maven-snapshots/</url>
-        </repository>
-        <repository>
-            <id>papermc-public</id>
-            <url>https://repo.papermc.io/repository/maven-public/</url>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>io.papermc.paper</groupId>
-            <artifactId>paper-api</artifactId>
-            <version>1.21.1-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.107.Final</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.mojang</groupId>
-            <artifactId>authlib</artifactId>
-            <version>6.0.57</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-
-    <build>
-        <defaultGoal>clean package</defaultGoal>
-        <finalName>MrSusu-1.0.0</finalName>
-        <plugins>
-            <plugin>
-                <groupId>io.papermc.paperweight</groupId>
-                <artifactId>paperweight-userdev-mojang-mojmap</artifactId>
-                <version>1.7.1-SNAPSHOT</version>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <id>reobf-jar</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>reobfJar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.13.0</version>
-                <configuration>
-                    <source>21</source>
-                    <target>21</target>
-                    <release>21</release>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-</project>
+<dependencies>
+    <dependency>
+        <groupId>com.comphenix.protocol</groupId>
+        <artifactId>ProtocolLib</artifactId>
+        <version>5.1.0</version> <scope>provided</scope>
+    </dependency>
+</dependencies>
